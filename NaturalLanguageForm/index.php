@@ -9,17 +9,17 @@
 	<body class="nl-blurred">
 		<div class="container demo-1">
 			<div class="main clearfix">
-				<form id="nl-form" class="nl-form" action="index.php">
+				<form id="nl-form" class="nl-form" action="index.php" method="POST">
 					I am <input type="text" name="name" value="" placeholder="Name" data-subline="Your Full Name"/>
 					,<input type="text" name="regno" value="" placeholder="Registration Number" data-subline="Your Registration Number"/>
-					currently <select>
-						<option name="type" value="1" selected>a STUDENT</option>
-						<option name="type" value="2">an EMPLOYEE</option>
-						<option name="type" value="3">OTHERS</option>
+					currently <select name="type">
+						<option value="1" selected>a STUDENT</option>
+						<option value="2">an EMPLOYEE</option>
+						<option value="3">OTHERS</option>
 					</select> in <input type="text" value="" placeholder="School/College" data-subline="Name of the current institution"/>
-					and i <select>
-						<option name="agree" value="1" selected> WOULD</option>
-						<option name="agree" value="2"> WOULD NOT</option>
+					and i <select name="agree">
+						<option value="1" selected> 1WOULD</option>
+						<option value="2"> WOULD NOT</option>
 					</select> like to recieve updates on<input type="text" name="email" value="" placeholder="XXXXX@XXX.XXX" data-subline="Please enter a <em>valid</em> email id"/>
 					<div class="nl-submit-wrap">
 						<button class="nl-submit" type="submit">SUBMIT</button>
@@ -40,7 +40,8 @@ function check($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-$con=mysqli_connect('server_name','DB_NAME','DB_PASS','DB_TABLE_NAME');
+//$con=mysqli_connect('server_name','DB_NAME','DB_PASS','DB_TABLE_NAME');
+$con=mysqli_connect('localhost','root','12345','test');
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 	$name=check($_POST['name']);
@@ -55,6 +56,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	}
     if($name!="" && $email!="" && $agree!="" && $type!="" && $emailErr=="")
     {
+    	echo "IN";
     	if(mysqli_query($con,"INSERT INTO contact(NAME,EMAIL,REGNO,TYPE,AGREE) VALUES('$name','$email','$regno','$type','$agree')"))
     	{
     		echo "SUCCESS";

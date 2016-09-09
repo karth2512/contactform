@@ -14,6 +14,8 @@
 	width: 100%;
 	margin: 0.3em 0 0 0;
 	font-size: 3em;
+	color: #010101;
+	background-color: transparent;
 	line-height: 1.5;
 }
 
@@ -61,7 +63,7 @@
 .nl-form select  {
 	line-height: inherit;
 	display: inline-block;
-	color: #b14943;
+	color: #028482;
 	cursor: pointer;
 	border-bottom: 1px dashed #b14943;
 }
@@ -70,7 +72,7 @@
 .nl-field ul {
 	position: absolute;
 	visibility: hidden;
-	background: #76C3BD;
+	background: #028482;
 	left: -0.5em;
 	top: 50%;
 	font-size: 80%;
@@ -223,7 +225,7 @@ input:focus::-ms-input-placeholder {
 	cursor: pointer;
 	position: relative;
 	background: #76C3BD;
-	color: #fff;
+	color: #010101;
 	padding: 0 1em 0 0;
 	font-size: 40%;
 	font-weight: bold;
@@ -232,7 +234,7 @@ input:focus::-ms-input-placeholder {
 
 .nl-submit:before {
 	content: "\e001";
-	color: #fff;
+	color: #010101;
 	float: left;
 	padding: 0 0.7em;
 	margin: 0 0.8em 0 0;
@@ -255,7 +257,7 @@ input:focus::-ms-input-placeholder {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0);
 	opacity: 0;
 	z-index: 9999;
 	visibility: hidden;
