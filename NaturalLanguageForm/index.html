@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="nl-blurred">
+		<div class="container demo-1">
+			<div class="main clearfix">
+				<form id="nl-form" class="nl-form">
+					I am <input type="text" value="" placeholder="Name" data-subline="Your Full Name"/>
+					,<input type="text" value="" placeholder="Registration Number" data-subline="Your Registration Number"/>
+					currently <select>
+						<option value="1" selected> a STUDENT</option>
+						<option value="2"> an EMPLOYEE</option>
+						<option value="3">OTHERS</option>
+					</select> in <input type="text" value="" placeholder="School/College" data-subline="Name of the current institution"/>
+					and i <select>
+						<option value="1" selected> WOULD</option>
+						<option value="2"> WOULD NOT</option>
+					</select> like to recieve updates on<input type="text" value="" placeholder="XXXXX@XXX.XXX" data-subline="Please enter a <em>valid</em> email id"/>
+					<div class="nl-submit-wrap">
+
+						<button class="nl-submit" type="submit">SUBMIT</button>
+					</div>
+					<div class="nl-overlay"></div>
+				</form>
+			</div>
+		</div><!-- /container -->
+		<script src="js/nlform.js"></script>
+		<script src="js/svgcheckbx.js"></script>
+		<script>
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		</script>
+	</body>
+</html>
