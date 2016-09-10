@@ -467,7 +467,40 @@ input:focus::-ms-input-placeholder {
 .ac-list svg path {
 	stroke-width: 4px;
 }
+#gallery {
+  display: none;
+}
 
+#gallery img {
+  height: 300px;
+  display: inline-block;
+}
+#progress-bar {
+  height: 30px;
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  background: transparent;
+  padding: 5px;
+  margin-top: 150px;
+  border: 3px solid #00a6ff;
+  text-align: center;
+  position: relative;
+}
+
+#progress-bar > #progress {
+  width: 0%;
+  height: 100%;
+  background: #00a6ff;
+}
+
+#progress-bar > p {
+  vertical-align: middle;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  margin: -50px auto 0;
+}
 /* Media Queries */
 @media screen and (max-width: 50em) {
 	section {

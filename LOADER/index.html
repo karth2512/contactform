@@ -1,0 +1,71 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <STYLE TYPE="text/css">
+    #preloader  {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: #000000;
+     z-index: 99;
+    height: 100%;
+ }
+
+#status  {
+     width: 500px;
+     height: 500px;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     background-color: #000;
+     background-image: url(loadingfinalcompressed.gif);
+     background-repeat: no-repeat;
+     background-position: center;
+     margin: -250px 0 0 -250px;
+ }
+
+
+</STYLE>
+<script>
+
+/*$(document).ready(function() {
+	console.log("JS LOADED");
+	$(".container").show();
+    var elem = document.getElementById("myBar"); 
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            document.getElementById("label").innerHTML = width * 1 + '%';
+        }
+    }*/
+ // makes sure the whole site is loaded
+ console.log("yeS");
+   
+
+$(window).load(function() {
+        
+	$("#status").fadeOut(3700);
+        // will fade out the whole DIV that covers the website.
+	$("#preloader").delay(3700).fadeOut("slow");
+});
+/*
+});*/
+    
+</script>
+	</head>
+<body>
+	<div id="preloader">
+  <div id="status"> 
+  </div></div>
+</div>
+HELLO WORLD
+	</body>
+</html>

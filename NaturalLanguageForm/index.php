@@ -5,8 +5,18 @@
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/modernizr.custom.js"></script>
-	</head>
-	<body class="nl-blurred">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	</head><div id="progress-bar">
+  <div id="progress"></div>
+  <p>
+    <span id="percentage">0%</span> of cute kittens loaded...
+  </p>
+</div>
+
+<section id="gallery">
+  <!-- Some images go in here -->
+</section>
+
 		<div class="container demo-1">
 			<div class="main clearfix">
 				<form id="nl-form" class="nl-form" action="index.php" method="POST">
@@ -20,7 +30,7 @@
 					and i <select name="agree">
 						<option value="1" selected> 1WOULD</option>
 						<option value="2"> WOULD NOT</option>
-					</select> like to recieve updates on<input type="text" name="email" value="" placeholder="XXXXX@XXX.XXX" data-subline="Please enter a <em>valid</em> email id"/>
+					</select> like to recieve updates on<input type="text" name="email" value="" placeholder="USERNAME@EXAMPLE." data-subline="Please enter a <em>valid</em> email id"/>
 					<div class="nl-submit-wrap">
 						<button class="nl-submit" type="submit">SUBMIT</button>
 					</div>
@@ -32,7 +42,31 @@
 		<script src="js/svgcheckbx.js"></script>
 		<script>
 			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
-		</script>
+		</script><script>
+		var countImages = $('#gallery img').size();
+
+$('#gallery').imagesLoaded()
+.always( function( instance ) {
+  $('#progress-bar').fadeOut(function() {
+    $('#gallery').fadeIn();
+  });
+})
+.progress( function( instance, image ) {
+  if(image.isLoaded) {
+    $(image.img).addClass('loaded');
+
+    var countLoadedImages = $('#gallery img.loaded').size();
+
+    var width = 100 * (countLoadedImages / countImages) + '%';
+
+    $('#progress-bar > #progress').css({
+      'width' : width
+    });
+
+    $('#progress-bar > p > span').html(width);
+  }
+});
+</script>
 <?php
 function check($data) {
   $data = trim($data);
