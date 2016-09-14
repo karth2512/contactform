@@ -1,0 +1,81 @@
+<html>
+    <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+    <script>
+    $(document).ready(function() {
+    $("#two").fadeOut(10);
+    $("#three").fadeOut(10);
+
+	var tabs =  $(".tabs li a");
+  
+	tabs.click(function() {
+		var content = this.hash.replace('/','');
+		tabs.removeClass("active");
+		$(this).addClass("active");
+    $("#one").fadeOut(10);
+    $("#two").fadeOut(10);
+    $("#three").fadeOut(10);
+    $(content).fadeIn(200);
+	});
+
+})(jQuery);
+    </script>
+<header>
+	<div class="section">
+		<div class="fixed">
+			<h1>KARTHIK RAJARAMAN</h1>
+			SCROLL TO KNOW ABOUT ME
+</div>
+</div>
+</header>
+<body>
+<div class="section">
+	<div class="fixed">
+		STUDYING AT VIT UNIVERSITY<P>
+		DOING B-TECH IN COMPUTER SCIENCE AND ENGINEERING
+	</div>
+</div>
+
+<div class="section">
+	<p><div class="fixed"> SKILLS
+		<div class="wrap">
+  
+  <ul class="tabs group">
+    <li><a class="active" href="#/one">BASIC</a></li>
+    <li><a href="#/two">INTERMEDIATE</a></li>
+    <li><a href="#/three">ADVANCED</a></li>
+  </ul>
+  
+  <div id="content">
+    <p id="one">JAVASCRIPT<br>CSS 3<br>HTML 5</p>
+    <p id="two">C / C++<br>JAVA<br>PYTHON (3.x)<br></p>
+    <p id="three">COMING SOON :P</p>
+  </div>
+  
+</div></div>
+</div>
+
+<div class="section">
+	<p><div class="fixed"> SOFTWARES<div class="wrap">
+		<div id="content1">
+				<p>ADOBE AFTER EFFECTS<br>AUTODESK 3DS MAX<br>ARDUINO<br>PROCESSING</p>
+  </div></div></div>
+		
+</div>
+
+<div class="section">
+	<p><div class="fixed"> PROJECTS - HARDWARE
+</div>
+</div>
+<div class="section">
+	<p><div class="fixed">PROJECTS - SOFTWARE
+</div>
+</div>
+<div class="section">
+	<p><div class="fixed">
+</div>
+</div>
+</body>
+</html>
